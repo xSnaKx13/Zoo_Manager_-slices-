@@ -11,8 +11,17 @@ type animal struct{
 	animalSpecies string
 }
 func main(){
-	var allZooAnimals []string
-	var lion string
+	var zoo []animal
+	var lion animal
+	var wolf animal
+	wolf.animalName = "Волк"
+	wolf.animalSpecies = "Собачьи"
+	zoo = append(zoo, wolf)
+
+	addNewAnumal(&lion)
+	zoo = append(zoo, lion)
+
+	printAllAnimal(zoo)
 	
 }
 func addNewAnumal(animal *animal){
@@ -34,6 +43,8 @@ func addNewAnumal(animal *animal){
 		}
 	}
 }
-func printAllAnimal(){
-
+func printAllAnimal(zoo[]animal){
+	for _, animal := range zoo{
+		fmt.Println(animal)
+	}
 }
